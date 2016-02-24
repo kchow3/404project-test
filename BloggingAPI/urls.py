@@ -1,6 +1,11 @@
 from django.conf.urls import patterns, url, include
+from rest_framework import routers
 from django.contrib import admin
 from .views import *
+
+
+router = routers.SimpleRouter()
+router.register(r'author', AuthorViewSet)
 
 urlpatterns = [
     # Examples:
@@ -8,6 +13,5 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-
-    url(r'^author/$', views.AuthorView.as_view(), name='author-list'),
+    url(r'^', include(router.urls)),
 ]

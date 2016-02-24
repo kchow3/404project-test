@@ -8,7 +8,7 @@ class AuthorSerializer(serializers.ModelSerializer):
     id = serializers.UUIDField(source='Author.uuid')
 
     class Meta:
-        model = User
+        model = Author
         fields = ('id', 'host' 'display_name', 'url', 'github')
 
 #Post Serializer

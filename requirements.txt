@@ -4,3 +4,4 @@ django==1.9
 djangorestframework
 psycopg2
 pillow
+drf-nested-routers

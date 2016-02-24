@@ -1,10 +1,10 @@
-from rest_framework import generics
+from rest_framework import viewsets
 from .serializers import *
 
-class AuthorView(generics.ListAPIView):
+class AuthorViewSet(viewsets.ModelViewSet):
 
     """
     Returns a list of all authors.
     """
-    model = Author
+    queryset = Author.objects.all()
     serializer_class = AuthorSerializer
